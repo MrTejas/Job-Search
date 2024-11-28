@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Jobs</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <h1>Top Jobs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>State</th>
+        <th>City</th>
+        <th>Min Salary</th>
+        <th>Max Salary</th>
+        <!-- <th></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for job in jobs %}
+      <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.company }}</td>
+        <td>{{ job.state }}</td>
+        <td>{{ job.city }}</td>
+        <td>{{ job.min_salary }}</td>
+        <td>{{ job.max_salary }}</td>
+        <!-- <td><button class="view-details" data-job-id="{{ loop.index }}">View Details</button></td> -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div id="job-details" style="display: none;">
+    <h2>Job Details</h2>
+    <p id="job-title"></p>
+    <p id="job-company"></p>
+    <p id="job-state"></p>
+    <p id="job-city"></p>
+    <p id="job-min-salary"></p>
+    <p id="job-max-salary"></p>
+    <p id="job-desc"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
